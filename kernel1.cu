@@ -1,5 +1,8 @@
-__global__ void Kernel1(int *w_hat, int *p_hat, int *s, int *U, int k, int q) {
+__global__ void Kernel1(int *w_hat, int *p_hat, int *s, int *U, int* kk, int* qq, int *P_star, int *W_star) 
+{
 
+    int k = *kk;
+    int q = *qq;
     // Calculate global thread index based on the block and thread indices ----
 
     //INSERT KERNEL CODE HERE
@@ -10,16 +13,18 @@ __global__ void Kernel1(int *w_hat, int *p_hat, int *s, int *U, int k, int q) {
     //INSERT KERNEL CODE HERE
     int se = s[e], we = w_hat[e], pe = p_hat[e], Ue = U[e];
     if (k<se){
-        we = we - w[k];
-        pe = pe - p[k];
+        we = we - W_star[k];
+        pe = pe - P_star[k];
     }
     else{
         se = se + 1;
         Ue = 0;
     }
-    AtomicExch(& w_hat[e+q], we);
-    AtomicExch(& p_hat[e+q], pe);
-    AtomicExch(& s[e+q], se);
-    AtomicExch(& U[e], Ue);
-}
+    printf("Completed Calculating in Kernel 1");
+    atomicExch(& w_hat[e+q], we);
+    atomicExch(& p_hat[e+q], pe);
+    atomicExch(& s[e+q], se);
+    atomicExch(& U[e], Ue);
 
+    printf("Completed Updating in Kernel 1");
+}
