@@ -9,6 +9,16 @@
     #define max(a,b) ((a) > (b) ? (a) : (b))
 #endif
 
+#define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
+inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=true)
+{
+   if (code != cudaSuccess) 
+   {
+      fprintf(stderr,"GPUassert: %s %s %d\n", cudaGetErrorString(code), file, line);
+      if (abort) exit(code);
+   }
+}
+
 typedef struct {
     unsigned int w_hat, p_hat, ub, lb, s;
 } Node;
@@ -32,8 +42,8 @@ void *fixed_cudaMalloc(size_t len)
 void copy_to_device(int* h_arr, int* d_arr, int len){
 
     cudaError_t cuda_ret = cudaMemcpy(d_arr, h_arr, sizeof(int)*len, cudaMemcpyHostToDevice);
-    // printf(cuda_ret);
     if(cuda_ret != cudaSuccess) FATAL("Unable to copy memory to device");
+    gpuErrchk( cudaMalloc(&d_arr, len*sizeof(int)) );
 }
 
 int MAX = 120;
