@@ -6,7 +6,7 @@ __global__ void Kernel3(int L_bar, int *U, int *Label) {
     // Don't know if it should be int or float and pointer or not.
 
 
-
+ 
     // Calculate global thread index based on the block and thread indices ----
     int e = blockDim.x*blockIdx.x + threadIdx.x; // +q or +2q ?
 

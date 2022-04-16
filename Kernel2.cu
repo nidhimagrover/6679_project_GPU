@@ -48,7 +48,7 @@ __global__ void Kernel2(int *w_hat, int *p_hat, int *s, int *L, int *U, int* kk,
             pj = pj + pi;
         }
     }
-    printf("Completed Calculating in Kernel 2");
+    // printf("Completed Calculating in Kernel 2");
     /*Update of the tuple (w_hat_j,p_hat_j,s_j,U_j,L_j) in the global memory of the GPU*/
     atomicExch(& w_hat[j], what); 
     atomicExch(& p_hat[j ], phat); 
@@ -57,5 +57,5 @@ __global__ void Kernel2(int *w_hat, int *p_hat, int *s, int *L, int *U, int* kk,
     atomicExch(& U[j],phat); 
     atomicExch(& L[j], pj);
 
-    printf("Completed Updating in Kernel 2");
+    // printf("Completed Updating in Kernel 2");
 }

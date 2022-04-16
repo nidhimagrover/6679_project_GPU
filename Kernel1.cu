@@ -20,11 +20,11 @@ __global__ void Kernel1(int *w_hat, int *p_hat, int *s, int *U, int* kk, int* qq
         se = se + 1;
         Ue = 0;
     }
-    printf("Completed Calculating in Kernel 1");
+    // printf("Completed Calculating in Kernel 1");
     atomicExch(& w_hat[e+q], we);
     atomicExch(& p_hat[e+q], pe);
     atomicExch(& s[e+q], se);
     atomicExch(& U[e], Ue);
 
-    printf("Completed Updating in Kernel 1");
+    // printf("Completed Updating in Kernel 1");
 }
