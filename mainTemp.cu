@@ -32,7 +32,7 @@ void *fixed_cudaMalloc(size_t len)
 void copy_to_device(int* h_arr, int* d_arr, int len){
 
     cudaError_t cuda_ret = cudaMemcpy(d_arr, h_arr, sizeof(int)*len, cudaMemcpyHostToDevice);
-    printf(cuda_ret);
+    // printf(cuda_ret);
     if(cuda_ret != cudaSuccess) FATAL("Unable to copy memory to device");
 }
 
@@ -221,8 +221,9 @@ int main(int argc, char**argv) {
         cudaDeviceSynchronize();
         
         // Copy Label_d to Label_h 
-        cuda_ret = cudaMemcpy(Label_h, Label_d, sizeof(float)*MAX, cudaMemcpyDeviceToHost);
-        if(cuda_ret != cudaSuccess) FATAL("Unable to copy Label from device to host");
+        // int* Label_h;
+        // cuda_ret = cudaMemcpy(Label_h, Label_d, sizeof(float)*MAX, cudaMemcpyDeviceToHost);
+        // if(cuda_ret != cudaSuccess) FATAL("Unable to copy Label from device to host");
 
         // // Verify correctness -----------------------------------------------------
 
