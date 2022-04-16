@@ -31,11 +31,11 @@ Instructions:
     ```
 
 
-4) Compare the program output. 
+<!-- 4) Compare the program output. 
 
 ```
 diff batch.err batch.err.ref
 diff batch.log batch.log.ref
 diff myoutput.log myoutput.log.ref
-```
+``` -->
 
