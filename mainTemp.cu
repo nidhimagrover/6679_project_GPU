@@ -42,7 +42,7 @@ void *fixed_cudaMalloc(size_t len)
 void copy_to_device(int* h_arr, int* d_arr, int len){
 
     cudaError_t cuda_ret = cudaMemcpy(d_arr, h_arr, sizeof(int)*len, cudaMemcpyHostToDevice);
-    if(cuda_ret != cudaSuccess) FATAL("Unable to copy memory to device");
+    if(cuda_ret != cudaSuccess) FATAL("Unable to COPY memory to device");
     gpuErrchk( cudaMalloc(&d_arr, len*sizeof(int)) );
 }
 
