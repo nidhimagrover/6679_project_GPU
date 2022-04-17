@@ -1,4 +1,511 @@
-Testing instances of size = 10 
-
-Setting up the problem...    Number of Items = 10
-Allocating device variables...Device variables Allocated ...Copying data from host to device...
+Value of item (i.e. k from for loop): 0 and Qsize: 2
+Node: 0   UB: 27193  LB: 26696  LBar: 26696 
+Node: 1   UB: 27183  LB: 26668  LBar: 26696 
+Value of item (i.e. k from for loop): 1 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 26696 
+Node: 1   UB: 0  LB: 26668  LBar: 26696 
+Node: 2   UB: 27183  LB: 26663  LBar: 26696 
+Node: 3   UB: 27183  LB: 26668  LBar: 26696 
+Value of item (i.e. k from for loop): 2 and Qsize: 6
+Node: 0   UB: 27193  LB: 26696  LBar: 26696 
+Node: 1   UB: 0  LB: 26668  LBar: 26696 
+Node: 2   UB: 0  LB: 26663  LBar: 26696 
+Node: 3   UB: 27183  LB: 26649  LBar: 26696 
+Node: 4   UB: 27173  LB: 26635  LBar: 26696 
+Node: 5   UB: 27173  LB: 26635  LBar: 26696 
+Value of item (i.e. k from for loop): 3 and Qsize: 8
+Node: 0   UB: 27193  LB: 26696  LBar: 26696 
+Node: 1   UB: 0  LB: 26668  LBar: 26696 
+Node: 2   UB: 0  LB: 26663  LBar: 26696 
+Node: 3   UB: 0  LB: 26649  LBar: 26696 
+Node: 4   UB: 27184  LB: 26611  LBar: 26696 
+Node: 5   UB: 27164  LB: 26588  LBar: 26696 
+Node: 6   UB: 27164  LB: 26588  LBar: 26696 
+Node: 7   UB: 27164  LB: 26588  LBar: 26696 
+Value of item (i.e. k from for loop): 4 and Qsize: 10
+Node: 0   UB: 27193  LB: 26696  LBar: 26696 
+Node: 1   UB: 0  LB: 26668  LBar: 26696 
+Node: 2   UB: 0  LB: 26663  LBar: 26696 
+Node: 3   UB: 0  LB: 26649  LBar: 26696 
+Node: 4   UB: 0  LB: 26611  LBar: 26696 
+Node: 5   UB: 27184  LB: 26610  LBar: 26696 
+Node: 6   UB: 27155  LB: 26503  LBar: 26696 
+Node: 7   UB: 27155  LB: 26503  LBar: 26696 
+Node: 8   UB: 27155  LB: 26503  LBar: 26696 
+Node: 9   UB: 27155  LB: 26503  LBar: 26696 
+Value of item (i.e. k from for loop): 5 and Qsize: 12
+Node: 0   UB: 27193  LB: 26696  LBar: 27110 
+Node: 1   UB: 0  LB: 26668  LBar: 27110 
+Node: 2   UB: 0  LB: 26663  LBar: 27110 
+Node: 3   UB: 0  LB: 26649  LBar: 27110 
+Node: 4   UB: 0  LB: 26611  LBar: 27110 
+Node: 5   UB: 0  LB: 26610  LBar: 27110 
+Node: 6   UB: 27184  LB: 26609  LBar: 27110 
+Node: 7   UB: 27146  LB: 27110  LBar: 27110 
+Node: 8   UB: 27146  LB: 27110  LBar: 27110 
+Node: 9   UB: 27146  LB: 27110  LBar: 27110 
+Node: 10   UB: 27146  LB: 27110  LBar: 27110 
+Node: 11   UB: 27146  LB: 27110  LBar: 27110 
+Value of item (i.e. k from for loop): 6 and Qsize: 14
+Node: 0   UB: 27193  LB: 26696  LBar: 27110 
+Node: 1   UB: 0  LB: 26668  LBar: 27110 
+Node: 2   UB: 0  LB: 26663  LBar: 27110 
+Node: 3   UB: 0  LB: 26649  LBar: 27110 
+Node: 4   UB: 0  LB: 26611  LBar: 27110 
+Node: 5   UB: 0  LB: 26610  LBar: 27110 
+Node: 6   UB: 0  LB: 26609  LBar: 27110 
+Node: 7   UB: 27184  LB: 26598  LBar: 27110 
+Node: 8   UB: 27137  LB: 27023  LBar: 27110 
+Node: 9   UB: 27137  LB: 27023  LBar: 27110 
+Node: 10   UB: 27137  LB: 27023  LBar: 27110 
+Node: 11   UB: 27137  LB: 27023  LBar: 27110 
+Node: 12   UB: 27137  LB: 27023  LBar: 27110 
+Node: 13   UB: 27137  LB: 27023  LBar: 27110 
+Value of item (i.e. k from for loop): 7 and Qsize: 16
+Node: 0   UB: 27193  LB: 26696  LBar: 27110 
+Node: 1   UB: 0  LB: 26668  LBar: 27110 
+Node: 2   UB: 0  LB: 26663  LBar: 27110 
+Node: 3   UB: 0  LB: 26649  LBar: 27110 
+Node: 4   UB: 0  LB: 26611  LBar: 27110 
+Node: 5   UB: 0  LB: 26610  LBar: 27110 
+Node: 6   UB: 0  LB: 26609  LBar: 27110 
+Node: 7   UB: 0  LB: 26598  LBar: 27110 
+Node: 8   UB: 27184  LB: 26575  LBar: 27110 
+Node: 9   UB: 27128  LB: 26925  LBar: 27110 
+Node: 10   UB: 27128  LB: 26925  LBar: 27110 
+Node: 11   UB: 27128  LB: 26925  LBar: 27110 
+Node: 12   UB: 27128  LB: 26925  LBar: 27110 
+Node: 13   UB: 27128  LB: 26925  LBar: 27110 
+Node: 14   UB: 27128  LB: 26925  LBar: 27110 
+Node: 15   UB: 27128  LB: 26925  LBar: 27110 
+Value of item (i.e. k from for loop): 8 and Qsize: 18
+Node: 0   UB: 27193  LB: 26696  LBar: 27110 
+Node: 1   UB: 0  LB: 26668  LBar: 27110 
+Node: 2   UB: 0  LB: 26663  LBar: 27110 
+Node: 3   UB: 0  LB: 26649  LBar: 27110 
+Node: 4   UB: 0  LB: 26611  LBar: 27110 
+Node: 5   UB: 0  LB: 26610  LBar: 27110 
+Node: 6   UB: 0  LB: 26609  LBar: 27110 
+Node: 7   UB: 0  LB: 26598  LBar: 27110 
+Node: 8   UB: 0  LB: 26575  LBar: 27110 
+Node: 9   UB: 27184  LB: 26571  LBar: 27110 
+Node: 10   UB: 27120  LB: 26804  LBar: 27110 
+Node: 11   UB: 27120  LB: 26804  LBar: 27110 
+Node: 12   UB: 27120  LB: 26804  LBar: 27110 
+Node: 13   UB: 27120  LB: 26804  LBar: 27110 
+Node: 14   UB: 27120  LB: 26804  LBar: 27110 
+Node: 15   UB: 27120  LB: 26804  LBar: 27110 
+Node: 16   UB: 27120  LB: 26804  LBar: 27110 
+Node: 17   UB: 27120  LB: 26804  LBar: 27110 
+Value of item (i.e. k from for loop): 9 and Qsize: 20
+Node: 0   UB: 27193  LB: 26696  LBar: 27110 
+Node: 1   UB: 0  LB: 26668  LBar: 27110 
+Node: 2   UB: 0  LB: 26663  LBar: 27110 
+Node: 3   UB: 0  LB: 26649  LBar: 27110 
+Node: 4   UB: 0  LB: 26611  LBar: 27110 
+Node: 5   UB: 0  LB: 26610  LBar: 27110 
+Node: 6   UB: 0  LB: 26609  LBar: 27110 
+Node: 7   UB: 0  LB: 26598  LBar: 27110 
+Node: 8   UB: 0  LB: 26575  LBar: 27110 
+Node: 9   UB: 0  LB: 26571  LBar: 27110 
+Node: 10   UB: 27185  LB: 26535  LBar: 27110 
+Node: 11   UB: 27112  LB: 26679  LBar: 27110 
+Node: 12   UB: 27112  LB: 26679  LBar: 27110 
+Node: 13   UB: 27112  LB: 26679  LBar: 27110 
+Node: 14   UB: 27112  LB: 26679  LBar: 27110 
+Node: 15   UB: 27112  LB: 26679  LBar: 27110 
+Node: 16   UB: 27112  LB: 26679  LBar: 27110 
+Node: 17   UB: 27112  LB: 26679  LBar: 27110 
+Node: 18   UB: 27112  LB: 26679  LBar: 27110 
+Node: 19   UB: 27112  LB: 26679  LBar: 27110 
+Value of item (i.e. k from for loop): 10 and Qsize: 22
+Node: 0   UB: 27193  LB: 26696  LBar: 27110 
+Node: 1   UB: 0  LB: 26668  LBar: 27110 
+Node: 2   UB: 0  LB: 26663  LBar: 27110 
+Node: 3   UB: 0  LB: 26649  LBar: 27110 
+Node: 4   UB: 0  LB: 26611  LBar: 27110 
+Node: 5   UB: 0  LB: 26610  LBar: 27110 
+Node: 6   UB: 0  LB: 26609  LBar: 27110 
+Node: 7   UB: 0  LB: 26598  LBar: 27110 
+Node: 8   UB: 0  LB: 26575  LBar: 27110 
+Node: 9   UB: 0  LB: 26571  LBar: 27110 
+Node: 10   UB: 0  LB: 26535  LBar: 27110 
+Node: 11   UB: 27185  LB: 26532  LBar: 27110 
+Node: 12   UB: 27104  LB: 26518  LBar: 27110 
+Node: 13   UB: 27104  LB: 26518  LBar: 27110 
+Node: 14   UB: 27104  LB: 26518  LBar: 27110 
+Node: 15   UB: 27104  LB: 26518  LBar: 27110 
+Node: 16   UB: 27104  LB: 26518  LBar: 27110 
+Node: 17   UB: 27104  LB: 26518  LBar: 27110 
+Node: 18   UB: 27104  LB: 26518  LBar: 27110 
+Node: 19   UB: 27104  LB: 26518  LBar: 27110 
+Node: 20   UB: 27104  LB: 26518  LBar: 27110 
+Node: 21   UB: 27104  LB: 26518  LBar: 27110 
+Value of item (i.e. k from for loop): 11 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27110 
+Node: 1   UB: 0  LB: 26668  LBar: 27110 
+Node: 2   UB: 27185  LB: 26507  LBar: 27110 
+Node: 3   UB: 27096  LB: 27052  LBar: 27110 
+Value of item (i.e. k from for loop): 12 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 26668  LBar: 27186 
+Node: 2   UB: 27186  LB: 27186  LBar: 27186 
+Node: 3   UB: 27089  LB: 26863  LBar: 27186 
+Value of item (i.e. k from for loop): 13 and Qsize: 2
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 27186  LB: 27185  LBar: 27186 
+Value of item (i.e. k from for loop): 14 and Qsize: 2
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 27186  LB: 27171  LBar: 27186 
+Value of item (i.e. k from for loop): 15 and Qsize: 2
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 27186  LB: 27170  LBar: 27186 
+Value of item (i.e. k from for loop): 16 and Qsize: 2
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 27186  LB: 27166  LBar: 27186 
+Value of item (i.e. k from for loop): 17 and Qsize: 2
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 27186  LB: 27160  LBar: 27186 
+Value of item (i.e. k from for loop): 18 and Qsize: 2
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 27186  LB: 27127  LBar: 27186 
+Value of item (i.e. k from for loop): 19 and Qsize: 2
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 27186  LB: 27125  LBar: 27186 
+Value of item (i.e. k from for loop): 20 and Qsize: 2
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 27187  LB: 27115  LBar: 27186 
+Value of item (i.e. k from for loop): 21 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27187  LB: 27112  LBar: 27186 
+Node: 3   UB: 27027  LB: 26938  LBar: 27186 
+Value of item (i.e. k from for loop): 22 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27187  LB: 27110  LBar: 27186 
+Node: 3   UB: 27020  LB: 26661  LBar: 27186 
+Value of item (i.e. k from for loop): 23 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27187  LB: 27098  LBar: 27186 
+Node: 3   UB: 27014  LB: 26382  LBar: 27186 
+Value of item (i.e. k from for loop): 24 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27187  LB: 27071  LBar: 27186 
+Node: 3   UB: 27008  LB: 26838  LBar: 27186 
+Value of item (i.e. k from for loop): 25 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27188  LB: 27045  LBar: 27186 
+Node: 3   UB: 27002  LB: 26520  LBar: 27186 
+Value of item (i.e. k from for loop): 26 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27188  LB: 27039  LBar: 27186 
+Node: 3   UB: 26996  LB: 26949  LBar: 27186 
+Value of item (i.e. k from for loop): 27 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27188  LB: 27036  LBar: 27186 
+Node: 3   UB: 26991  LB: 26599  LBar: 27186 
+Value of item (i.e. k from for loop): 28 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27188  LB: 27027  LBar: 27186 
+Node: 3   UB: 26985  LB: 26246  LBar: 27186 
+Value of item (i.e. k from for loop): 29 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27188  LB: 26998  LBar: 27186 
+Node: 3   UB: 26980  LB: 26657  LBar: 27186 
+Value of item (i.e. k from for loop): 30 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27188  LB: 26990  LBar: 27186 
+Node: 3   UB: 26975  LB: 26266  LBar: 27186 
+Value of item (i.e. k from for loop): 31 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27189  LB: 26975  LBar: 27186 
+Node: 3   UB: 26970  LB: 26643  LBar: 27186 
+Value of item (i.e. k from for loop): 32 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27189  LB: 26973  LBar: 27186 
+Node: 3   UB: 26965  LB: 26229  LBar: 27186 
+Value of item (i.e. k from for loop): 33 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27189  LB: 26969  LBar: 27186 
+Node: 3   UB: 26960  LB: 26615  LBar: 27186 
+Value of item (i.e. k from for loop): 34 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27189  LB: 26965  LBar: 27186 
+Node: 3   UB: 26955  LB: 26195  LBar: 27186 
+Value of item (i.e. k from for loop): 35 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27189  LB: 26963  LBar: 27186 
+Node: 3   UB: 26950  LB: 26576  LBar: 27186 
+Value of item (i.e. k from for loop): 36 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27189  LB: 26961  LBar: 27186 
+Node: 3   UB: 26945  LB: 26150  LBar: 27186 
+Value of item (i.e. k from for loop): 37 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27189  LB: 26958  LBar: 27186 
+Node: 3   UB: 26940  LB: 26539  LBar: 27186 
+Value of item (i.e. k from for loop): 38 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27189  LB: 26946  LBar: 27186 
+Node: 3   UB: 26936  LB: 26925  LBar: 27186 
+Value of item (i.e. k from for loop): 39 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27190  LB: 26900  LBar: 27186 
+Node: 3   UB: 26931  LB: 26482  LBar: 27186 
+Value of item (i.e. k from for loop): 40 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27190  LB: 26893  LBar: 27186 
+Node: 3   UB: 26927  LB: 26818  LBar: 27186 
+Value of item (i.e. k from for loop): 41 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27190  LB: 26891  LBar: 27186 
+Node: 3   UB: 26923  LB: 26322  LBar: 27186 
+Value of item (i.e. k from for loop): 42 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27190  LB: 26886  LBar: 27186 
+Node: 3   UB: 26919  LB: 26659  LBar: 27186 
+Value of item (i.e. k from for loop): 43 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27190  LB: 26882  LBar: 27186 
+Node: 3   UB: 26914  LB: 26156  LBar: 27186 
+Value of item (i.e. k from for loop): 44 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27190  LB: 26878  LBar: 27186 
+Node: 3   UB: 26910  LB: 26502  LBar: 27186 
+Value of item (i.e. k from for loop): 45 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27190  LB: 26878  LBar: 27186 
+Node: 3   UB: 26906  LB: 26865  LBar: 27186 
+Value of item (i.e. k from for loop): 46 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27190  LB: 26869  LBar: 27186 
+Node: 3   UB: 26902  LB: 26354  LBar: 27186 
+Value of item (i.e. k from for loop): 47 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27190  LB: 26864  LBar: 27186 
+Node: 3   UB: 26898  LB: 26709  LBar: 27186 
+Value of item (i.e. k from for loop): 48 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27190  LB: 26859  LBar: 27186 
+Node: 3   UB: 26894  LB: 26184  LBar: 27186 
+Value of item (i.e. k from for loop): 49 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26841  LBar: 27186 
+Node: 3   UB: 26889  LB: 26533  LBar: 27186 
+Value of item (i.e. k from for loop): 50 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26833  LBar: 27186 
+Node: 3   UB: 26886  LB: 26878  LBar: 27186 
+Value of item (i.e. k from for loop): 51 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26818  LBar: 27186 
+Node: 3   UB: 26882  LB: 26322  LBar: 27186 
+Value of item (i.e. k from for loop): 52 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26814  LBar: 27186 
+Node: 3   UB: 26878  LB: 26648  LBar: 27186 
+Value of item (i.e. k from for loop): 53 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26813  LBar: 27186 
+Node: 3   UB: 26874  LB: 26073  LBar: 27186 
+Value of item (i.e. k from for loop): 54 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26813  LBar: 27186 
+Node: 3   UB: 26871  LB: 26401  LBar: 27186 
+Value of item (i.e. k from for loop): 55 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26809  LBar: 27186 
+Node: 3   UB: 26867  LB: 26735  LBar: 27186 
+Value of item (i.e. k from for loop): 56 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26806  LBar: 27186 
+Node: 3   UB: 26863  LB: 26155  LBar: 27186 
+Value of item (i.e. k from for loop): 57 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26794  LBar: 27186 
+Node: 3   UB: 26860  LB: 26486  LBar: 27186 
+Value of item (i.e. k from for loop): 58 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26793  LBar: 27186 
+Node: 3   UB: 26856  LB: 26814  LBar: 27186 
+Value of item (i.e. k from for loop): 59 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26788  LBar: 27186 
+Node: 3   UB: 26852  LB: 26218  LBar: 27186 
+Value of item (i.e. k from for loop): 60 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26787  LBar: 27186 
+Node: 3   UB: 26849  LB: 26541  LBar: 27186 
+Value of item (i.e. k from for loop): 61 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27191  LB: 26778  LBar: 27186 
+Node: 3   UB: 26845  LB: 25939  LBar: 27186 
+Value of item (i.e. k from for loop): 62 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27192  LB: 26749  LBar: 27186 
+Node: 3   UB: 26841  LB: 26280  LBar: 27186 
+Value of item (i.e. k from for loop): 63 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27192  LB: 26747  LBar: 27186 
+Node: 3   UB: 26838  LB: 26623  LBar: 27186 
+Value of item (i.e. k from for loop): 64 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27192  LB: 26740  LBar: 27186 
+Node: 3   UB: 26834  LB: 25981  LBar: 27186 
+Value of item (i.e. k from for loop): 65 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27192  LB: 26730  LBar: 27186 
+Node: 3   UB: 26831  LB: 26327  LBar: 27186 
+Value of item (i.e. k from for loop): 66 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27192  LB: 26714  LBar: 27186 
+Node: 3   UB: 26827  LB: 26666  LBar: 27186 
+Value of item (i.e. k from for loop): 67 and Qsize: 4
+Node: 0   UB: 27193  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27193  LB: 26704  LBar: 27186 
+Node: 3   UB: 26824  LB: 25991  LBar: 27186 
+Value of item (i.e. k from for loop): 68 and Qsize: 4
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 0  LB: 27115  LBar: 27186 
+Node: 2   UB: 27193  LB: 26696  LBar: 27186 
+Node: 3   UB: 26821  LB: 26308  LBar: 27186 
+Value of item (i.e. k from for loop): 69 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27193  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 70 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27192  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 71 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27192  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 72 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27192  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 73 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27192  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 74 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27192  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 75 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27192  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 76 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27192  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 77 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27192  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 78 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27192  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 79 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27192  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 80 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27192  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 81 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27192  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 82 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 83 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 84 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 85 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 86 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 87 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 88 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 89 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 90 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 91 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 92 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 93 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 94 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 95 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27191  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 96 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27190  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 97 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27190  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 98 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27190  LB: 26696  LBar: 27186 
+Value of item (i.e. k from for loop): 99 and Qsize: 2
+Node: 0   UB: 0  LB: 26696  LBar: 27186 
+Node: 1   UB: 27190  LB: 26696  LBar: 27186 
+[rojha8@atl1-1-02-009-32 6679_project_GPU]$ 
