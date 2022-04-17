@@ -307,13 +307,22 @@ int main(int argc, char**argv) {
 
 
             // Finally update q_size = q_size (which is actually twice its earlier size) - number of non-promising nodes
-            if (left >= right){
-                q_size = left;
-            } 
-            else
+            int count = 0;
+            for (int i = 0; i<q_size; i++)
             {
-                q_size = left + 1;
+                if (Label_h[i] == 1){
+                    count = count + 1;
+                }
             }
+            q_size = count;
+
+            // if (left >= right){
+            //     q_size = left;
+            // } 
+            // else
+            // {
+            //     q_size = left + 1;
+            // }
             fprintf(fptr, "Q_size at 301: %d in Item: %d \n", q_size, k);
             if (q_size == 0)
             {
