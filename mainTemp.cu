@@ -50,13 +50,14 @@ void copy_to_device(int* d_arr, int* h_arr, int len){
     }
 }
 
-void copy_from_device_to_host(int* h_arr, int* d_arr, int len){
-
+void copy_from_device_to_host(int* h_arr, int* d_arr, int len)
+{
     cudaError_t cuda_ret = cudaMemcpy(h_arr, d_arr, sizeof(int)*len, cudaMemcpyDeviceToHost);
-    if(cuda_ret != cudaSuccess) {
+    if(cuda_ret != cudaSuccess) 
+    {
     // print(gpuErrchk( cudaMalloc(&d_arr, len*sizeof(int)) );
-        printf("\nError %s\n", cudaGetErrorString(cuda_ret));
-        FATAL("Unable to COPY memory back to host");
+        printf("\nError %s\n", cudaGetErrorString(cuda_ret)) ;
+        // FATAL("UNABLE to COPY memory back to host");
     }
 }
 
@@ -86,9 +87,9 @@ int main(int argc, char**argv) {
     double inst_time = 0;
     // fprintf(fptr, "Testing instances of size = %d \n", numberOfItems);
     
-    for (int it=1; it<=10; it++) // Loop to Generate 10 instances for 100 items
+    for (int it=1; it<=1; it++) // Loop to Generate 10 instances for 100 items
     {   
-        printf("iterations = %d, \n", it);
+        printf("iterations = %d \n", it);
         int* W_star = (int*) malloc( numberOfItems*sizeof(int) ); // host
         int* P_star = (int*) malloc( numberOfItems*sizeof(int) ); // host
 
@@ -190,6 +191,7 @@ int main(int argc, char**argv) {
         {   
             copy_to_device(k_d, &k, 1);
             copy_to_device(q_d, &q_size, 1);
+        
             cudaDeviceSynchronize();
             // COPY HOST VARIABLES TO DEVICE  ------------------------------------------
             // fprintf(fptr, "Copying data from host to device..."); 
@@ -214,6 +216,7 @@ int main(int argc, char**argv) {
             if(cuda_ret != cudaSuccess) FATAL("Unable to launch kernel");
             
             // Copy L_d to L_h and calculate L_bar; Then send L_bar to Kernel 3
+            printf("Value of Lower Qsize: %d and iteration item: %d\n", q_size,k);
             copy_from_device_to_host(L_h, L_d, sizeof(int)*q_size);
             
             for (int i = q_size; i<2*q_size; i++) // Function atomicMax(): shoud have been implemented in GPU
@@ -229,7 +232,8 @@ int main(int argc, char**argv) {
             q_size = 2*q_size;
             // fprintf(fptr, "Q_size 1st: %d in Item: %d \n", q_size, k);
             // fprintf(fptr, "Launching kernel 3 for Item:  %d ...\n", k); 
-            copy_from_device_to_host(U_h, U_d, sizeof(int)*q_size);
+            printf("Value of Upper Qsize: %d\n", q_size);
+            // copy_from_device_to_host(U_h, U_d, sizeof(int)*q_size);
             
             // printf("Value of item (i.e. k from for loop): %d and Qsize: %d\n", k, q_size);
             // for (int kkk = 0; kkk < q_size; kkk++)
@@ -300,7 +304,7 @@ int main(int argc, char**argv) {
             if(cuda_ret != cudaSuccess){printf("\nError %s\n", cudaGetErrorString(cuda_ret)); FATAL("Unable to Launch Kernel 4");}
             cudaDeviceSynchronize();
 
-            copy_from_device_to_host(U_h, U_d, sizeof(int)*q_size);
+            // copy_from_device_to_host(U_h, U_d, sizeof(int)*q_size);
 
             // printf("After kernel 4: %d and Qsize: %d\n", k, q_size);
             // for (int kkk = 0; kkk < q_size; kkk++)
@@ -327,7 +331,7 @@ int main(int argc, char**argv) {
             // }
 
             // fprintf(fptr, "Q_size 2nd: %d in Item: %d \n", q_size, k);
-
+            printf("Value of 334 Qsize: %d and iteration item: %d\n", q_size,k);
             if (q_size > MAX/2 + 1)
             {
                 // printf("increasing q size");
@@ -351,7 +355,7 @@ int main(int argc, char**argv) {
                 cudaFree(concatIndexList_d);
 
                 MAX *= 10;
-
+                printf("Qsize: %d and iteration item: %d and Max Val: %d\n", q_size,k, MAX);
                 int *W_d = (int*) fixed_cudaMalloc(sizeof(int)*MAX); // device
                 int *P_d = (int*) fixed_cudaMalloc(sizeof(int)*MAX); // device
                 int *S_d = (int*) fixed_cudaMalloc(sizeof(int)*MAX); // device
