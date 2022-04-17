@@ -46,7 +46,8 @@ void copy_to_device(int* d_arr, int* h_arr, int len){
     if(cuda_ret != cudaSuccess) {
     // print(gpuErrchk( cudaMalloc(&d_arr, len*sizeof(int)) );
     printf("\nError %s\n", cudaGetErrorString(cuda_ret));
-    FATAL("Unable to COPY memory to device");}
+    FATAL("Unable to COPY memory to device");
+    }
 }
 
 int MAX = 100000;
@@ -307,11 +308,22 @@ int main(int argc, char**argv) {
             copy_to_device(concatIndexList_d, concatIndexList_h, MAX);
             // copy_to_device(Label_d, Label_h, MAX);
             
+            printf("Before kernel 4: %d and Qsize: %d\n", k, q_size);
+            for (int kkk = 0; kkk < q_size; kkk++)
+            {
+                printf("Node: %d  label: %d concat_idx: %d  \n", kkk, Label_h[kkk], concatIndexList_h[kkk]);
+            }
+            
             Kernel4<<<ceil(q_size/512.0), THREADS_PER_BLOCK>>>(W_d, P_d, S_d, U_d, Label_d, concatIndexList_d);
             cuda_ret = cudaDeviceSynchronize();
             if(cuda_ret != cudaSuccess){printf("\nError %s\n", cudaGetErrorString(cuda_ret)); FATAL("Unable to Launch Kernel 4");}
             cudaDeviceSynchronize();
 
+            printf("After kernel 4: %d and Qsize: %d\n", k, q_size);
+            for (int kkk = 0; kkk < q_size; kkk++)
+            {
+                printf("Node: %d   UB: %d  LB: %d  LBar: %d \n", kkk, U_h[kkk], L_h[kkk], L_bar);
+            }
 
             // Finally update q_size = q_size (which is actually twice its earlier size) - number of non-promising nodes
             int count = 0;
