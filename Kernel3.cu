@@ -17,11 +17,11 @@ __global__ void Kernel3(int L_bar, int *U, int *Label) {
     
     if (Ue<=L_bar)
     {
-        Label[e]=0;
+        atomicExch(& Label[e], 0);
     }
     else
     {
-        Label[e]=1;
+        atomicExch(& Label[e],1);
     }
     __syncthreads();
 
