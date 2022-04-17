@@ -243,7 +243,7 @@ int main(int argc, char**argv) {
             // Segmentation Fault Core dumped
             // fprintf(fptr, "L_bar value is: = %d\n", L_bar, L_h[0]);
 
-            
+             
             // q_d = 2*q_d;
             q_size = 2*q_size;
             fprintf(fptr, "Q_size 1st: %d in Item: %d \n", q_size, k);
