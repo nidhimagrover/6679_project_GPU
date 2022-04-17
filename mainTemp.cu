@@ -66,7 +66,7 @@ int main(int argc, char**argv) {
     
     cudaError_t cuda_ret;
 
-    int maxVal = 100;
+    int maxVal = 1000;
     
     srand(1);
     numberOfItems = 100;
@@ -75,7 +75,7 @@ int main(int argc, char**argv) {
     double inst_time = 0;
     fprintf(fptr, "Testing instances of size = %d \n", numberOfItems);
     
-    for (int it=1; it<=10; it++) // Loop to Generate 10 instances for 100 items
+    for (int it=1; it<=1; it++) // Loop to Generate 10 instances for 100 items
     {   
         printf("iterations = %d, \n", it);
         int* W_star = (int*) malloc( MAX*sizeof(int) ); // host
@@ -200,7 +200,7 @@ int main(int argc, char**argv) {
 
             // COPY HOST VARIABLES TO DEVICE  ------------------------------------------
             // fprintf(fptr, "Copying data from host to device..."); 
-            printf("iteration for item %d \n", k);
+            // printf("iteration for item %d \n", k);
             copy_to_device(W_d, W_h, MAX);
             copy_to_device(P_d, P_h, MAX);
             copy_to_device(S_d, S_h, MAX);
@@ -234,7 +234,7 @@ int main(int argc, char**argv) {
             cuda_ret = cudaMemcpy(L_h, L_d, sizeof(float)*MAX, cudaMemcpyDeviceToHost);
             if(cuda_ret != cudaSuccess) FATAL("Unable to copy L (lower bound) from device to host");
 
-            for (int i = 0; i<2*q_size; i++) // Function atomicMax(): shoud have been implemented in GPU
+            for (int i = q_size; i<2*q_size; i++) // Function atomicMax(): shoud have been implemented in GPU
             {
                 // fprintf(fptr, "L_bar value is: = %d, %d\n", L_bar, L_h[i]);
                 L_bar = max(L_bar, L_h[i]);
@@ -245,9 +245,16 @@ int main(int argc, char**argv) {
             
             // q_d = 2*q_d;
             q_size = 2*q_size;
-            fprintf(fptr, "Q_size at 233: %d in Item: %d \n", q_size, k);
+            fprintf(fptr, "Q_size 1st: %d in Item: %d \n", q_size, k);
             // fprintf(fptr, "Launching kernel 3 for Item:  %d ...\n", k); 
-        
+            cuda_ret = cudaMemcpy(U_h, U_d, sizeof(float)*MAX, cudaMemcpyDeviceToHost);
+            if(cuda_ret != cudaSuccess) FATAL("Unable to copy UB (lower bound) from device to host");
+            printf("Value of item (i.e. k from for loop): %d and Qsize: %d\n", k, q_size);
+            for (int kkk = 0; kkk < q_size; kkk++)
+            {
+                printf("Node: %d   UB: %d  LB: %d  LBar: %d \n", kkk, U_h[kkk], L_h[kkk], L_bar);
+            }
+            
             Kernel3<<<ceil(q_size/512.0), THREADS_PER_BLOCK>>>(L_bar, U_d, Label_d); //int *w_hat, int *p_hat, int *s, int *L, int *U, int q, int h
             cuda_ret = cudaDeviceSynchronize();
             if(cuda_ret != cudaSuccess) {printf("\nError %s\n", cudaGetErrorString(cuda_ret)); FATAL("Unable to launch kernel");}
@@ -298,7 +305,7 @@ int main(int argc, char**argv) {
 
             // fprintf(fptr, "Launching kernel 4 for Item:  %d ...\n", k); 
             copy_to_device(concatIndexList_d, concatIndexList_h, MAX);
-            copy_to_device(Label_d, Label_h, MAX);
+            // copy_to_device(Label_d, Label_h, MAX);
             
             Kernel4<<<ceil(q_size/512.0), THREADS_PER_BLOCK>>>(W_d, P_d, S_d, U_d, Label_d, concatIndexList_d);
             cuda_ret = cudaDeviceSynchronize();
@@ -323,7 +330,8 @@ int main(int argc, char**argv) {
             // {
             //     q_size = left + 1;
             // }
-            fprintf(fptr, "Q_size at 301: %d in Item: %d \n", q_size, k);
+
+            fprintf(fptr, "Q_size 2nd: %d in Item: %d \n", q_size, k);
             if (q_size == 0)
             {
                 break;
