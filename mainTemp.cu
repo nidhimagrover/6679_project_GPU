@@ -313,8 +313,10 @@ int main(int argc, char**argv) {
             {
                 printf("Node: %d  label: %d concat_idx: %d  \n", kkk, Label_h[kkk], concatIndexList_h[kkk]);
             }
+
+            copy_to_device(q_d, &q_size, 1);
             
-            Kernel4<<<ceil(q_size/512.0), THREADS_PER_BLOCK>>>(W_d, P_d, S_d, U_d, Label_d, concatIndexList_d);
+            Kernel4<<<ceil(q_size/512.0), THREADS_PER_BLOCK>>>(W_d, P_d, S_d, U_d, Label_d, concatIndexList_d, q_d);
             cuda_ret = cudaDeviceSynchronize();
             if(cuda_ret != cudaSuccess){printf("\nError %s\n", cudaGetErrorString(cuda_ret)); FATAL("Unable to Launch Kernel 4");}
             cudaDeviceSynchronize();
