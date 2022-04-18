@@ -33,6 +33,9 @@ int Capacity;
 int L_bar = -1; // Best Lower bound Initialization
 int j, new_q_size;
 
+// void print_stats(int itr, int* W_d){
+
+// }
 void *fixed_cudaMalloc(size_t len)
 {
     void *p;
@@ -57,7 +60,7 @@ void copy_from_device_to_host(int* h_arr, int* d_arr, int len)
     {
     // print(gpuErrchk( cudaMalloc(&d_arr, len*sizeof(int)) );
         printf("\nError %s\n", cudaGetErrorString(cuda_ret)) ;
-        // FATAL("UNABLE to COPY memory back to host");
+        FATAL("UNABLE to COPY memory back to host");
     }
 }
 
@@ -78,7 +81,7 @@ int main(int argc, char**argv) {
     
     cudaError_t cuda_ret;
 
-    int maxVal = 1000;
+    int maxVal = 100;
     
     srand(1);
     numberOfItems = 100;
@@ -87,7 +90,7 @@ int main(int argc, char**argv) {
     double inst_time = 0;
     // fprintf(fptr, "Testing instances of size = %d \n", numberOfItems);
     
-    for (int it=1; it<=1; it++) // Loop to Generate 10 instances for 100 items
+    for (int it=1; it<=10; it++) // Loop to Generate 10 instances for 100 items
     {   
         printf("iterations = %d \n", it);
         int* W_star = (int*) malloc( numberOfItems*sizeof(int) ); // host
@@ -101,15 +104,21 @@ int main(int argc, char**argv) {
         for (int iter = 0; iter < numberOfItems; iter++)
         {
             W_star[iter] = Inst.weight[iter];
-            fprintf(fptr1, "%d ", W_star[iter]);
-            
-        }
-        for (int iter = 0; iter < numberOfItems; iter++)
-        {
             P_star[iter] = Inst.price[iter];
-            fprintf(fptr1, "%d ", P_star[iter]);
             
         }
+        // for (int iter = 0; iter < numberOfItems; iter++)
+        // {
+        //     W_star[iter] = Inst.weight[iter];
+        //     fprintf(fptr1, "%d ", W_star[iter]);
+            
+        // }
+        // for (int iter = 0; iter < numberOfItems; iter++)
+        // {
+        //     P_star[iter] = Inst.price[iter];
+        //     fprintf(fptr1, "%d ", P_star[iter]);
+            
+        // }
         Capacity = Inst.capacity;
         fprintf(fptr1, "%d ", Capacity);
         start_t = clock();
@@ -138,7 +147,6 @@ int main(int argc, char**argv) {
             p += P_star[s];
         }
 
-        
         // ATTRIBUTES OF ROOT NODE: Initialize host variables ----------------------------------------------
         S_h[0] = s;
         P_h[0] = (p - P_star[s]);
@@ -157,7 +165,6 @@ int main(int argc, char**argv) {
         L_h[0] = L_bar;
         // fprintf(fptr, "Initialization of Attributes of Root Node...\n"); 
 
-        
         copy_to_device(W_star_d, W_star, numberOfItems);
         copy_to_device(P_star_d, P_star, numberOfItems);
 
@@ -189,13 +196,16 @@ int main(int argc, char**argv) {
         
         for (int k = 0; k<numberOfItems; k++) // numberOfItems
         {   
+            // if (k%10 == 0){
+            //     print_stats(k, W_d);
+            // }
             copy_to_device(k_d, &k, 1);
             copy_to_device(q_d, &q_size, 1);
         
             cudaDeviceSynchronize();
             // COPY HOST VARIABLES TO DEVICE  ------------------------------------------
             // fprintf(fptr, "Copying data from host to device..."); 
-            // printf("iteration for item %d \n", k);
+            printf("iteration for item %d -------------------------\n", k);
             
             
             // fprintf(fptr, "Launching kernel 1 for Item:  %d ...\n", k); 
@@ -217,7 +227,7 @@ int main(int argc, char**argv) {
             
             // Copy L_d to L_h and calculate L_bar; Then send L_bar to Kernel 3
             printf("Value of Lower Qsize: %d and iteration item: %d\n", q_size,k);
-            copy_from_device_to_host(L_h, L_d, sizeof(int)*q_size);
+            copy_from_device_to_host(L_h, L_d, (2*q_size));
             
             for (int i = q_size; i<2*q_size; i++) // Function atomicMax(): shoud have been implemented in GPU
             {
@@ -232,10 +242,10 @@ int main(int argc, char**argv) {
             q_size = 2*q_size;
             // fprintf(fptr, "Q_size 1st: %d in Item: %d \n", q_size, k);
             // fprintf(fptr, "Launching kernel 3 for Item:  %d ...\n", k); 
-            printf("Value of Upper Qsize: %d\n", q_size);
-            // copy_from_device_to_host(U_h, U_d, sizeof(int)*q_size);
             
-            // printf("Value of item (i.e. k from for loop): %d and Qsize: %d\n", k, q_size);
+            // copy_from_device_to_host(U_h, U_d, q_size);
+            
+            printf("Value of item (i.e. k from for loop): %d and Qsize: %d\n", k, q_size);
             // for (int kkk = 0; kkk < q_size; kkk++)
             // {
             //     printf("Node: %d   UB: %d  LB: %d  LBar: %d \n", kkk, U_h[kkk], L_h[kkk], L_bar);
@@ -247,8 +257,9 @@ int main(int argc, char**argv) {
             cudaDeviceSynchronize();
             
             // Copy Label_d to Label_h 
-            copy_from_device_to_host(Label_h, Label_d, sizeof(int)*q_size);
-           
+            printf("Value of Upper Qsize: %d\n", q_size);
+            copy_from_device_to_host(Label_h, Label_d, q_size); //q_size has been doubled
+            
             // Code to Determine Concatenation Indices
             int left = 0;
             int right = q_size-1;
@@ -286,27 +297,27 @@ int main(int argc, char**argv) {
                 {
                     concatIndexList_h[left] = left;
                 }
-
+            
             // fprintf(fptr, "Launching kernel 4 for Item:  %d ...\n", k); 
             copy_to_device(concatIndexList_d, concatIndexList_h, MAX);
             // copy_to_device(Label_d, Label_h, MAX);
             
-            // printf("Before kernel 4: %d and Qsize: %d\n", k, q_size);
+            printf("Before kernel 4: %d and Qsize: %d\n", k, q_size);
             // for (int kkk = 0; kkk < q_size; kkk++)
             // {
             //     printf("Node: %d  label: %d concat_idx: %d  \n", kkk, Label_h[kkk], concatIndexList_h[kkk]);
             // }
 
             copy_to_device(q_d, &q_size, 1);
-            
+            printf("Copying q_size to device:  %d ...\n", q_size); 
             Kernel4<<<ceil(q_size/512.0), THREADS_PER_BLOCK>>>(W_d, P_d, S_d, U_d, Label_d, concatIndexList_d, q_d);
             cuda_ret = cudaDeviceSynchronize();
             if(cuda_ret != cudaSuccess){printf("\nError %s\n", cudaGetErrorString(cuda_ret)); FATAL("Unable to Launch Kernel 4");}
             cudaDeviceSynchronize();
+            
+            // copy_from_device_to_host(U_h, U_d, q_size);
 
-            // copy_from_device_to_host(U_h, U_d, sizeof(int)*q_size);
-
-            // printf("After kernel 4: %d and Qsize: %d\n", k, q_size);
+            printf("After kernel 4: %d and Qsize: %d\n", k, q_size);
             // for (int kkk = 0; kkk < q_size; kkk++)
             // {
             //     printf("Node: %d   UB: %d  LB: %d  LBar: %d \n", kkk, U_h[kkk], L_h[kkk], L_bar);
@@ -320,31 +331,22 @@ int main(int argc, char**argv) {
                     count = count + 1;
                 }
             }
-            q_size = count;
-
-            // if (left >= right){
-            //     q_size = left;
-            // } 
-            // else
-            // {
-            //     q_size = left + 1;
-            // }
-
-            // fprintf(fptr, "Q_size 2nd: %d in Item: %d \n", q_size, k);
-            printf("Value of 334 Qsize: %d and iteration item: %d\n", q_size,k);
-            if (q_size > MAX/2 + 1)
+            q_size = count; // updating q_size after removing non-promising nodes
+            printf("Q_size is: %d and Max is: %d \n", q_size,MAX);
+            if (q_size > MAX/2 - 1)
             {
-                // printf("increasing q size");
+                printf("Q_size enter if: %d\n", q_size);
                 
-                
-                copy_from_device_to_host(W_h, W_d, sizeof(int)*q_size);
-                copy_from_device_to_host(P_h, P_d, sizeof(int)*q_size);
-                copy_from_device_to_host(S_h, S_d, sizeof(int)*q_size);
-                copy_from_device_to_host(U_h, U_d, sizeof(int)*q_size);
-                copy_from_device_to_host(L_h, L_d, sizeof(int)*q_size);
-                // copy_from_device_to_host(Label_h, Label_d, sizeof(int)*q_size);
-                // copy_from_device_to_host(concatIndexList_h, concatIndexList_d, sizeof(int)*q_size);
+                copy_from_device_to_host(W_h, W_d, q_size);
+                copy_from_device_to_host(P_h, P_d, q_size);
+                copy_from_device_to_host(S_h, S_d, q_size);
+                copy_from_device_to_host(U_h, U_d, q_size);
+                copy_from_device_to_host(L_h, L_d, q_size);
+                // copy_from_device_to_host(Label_h, Label_d, q_size);
+                // copy_from_device_to_host(concatIndexList_h, concatIndexList_d, q_size);
                 cudaDeviceSynchronize();
+                // size_t bbb = sizeof(W_d);
+                // printf("Size of W_d before: %d\n", bbb);
 
                 cudaFree(W_d);
                 cudaFree(P_d);
@@ -355,7 +357,8 @@ int main(int argc, char**argv) {
                 cudaFree(concatIndexList_d);
 
                 MAX *= 10;
-                printf("Qsize: %d and iteration item: %d and Max Val: %d\n", q_size,k, MAX);
+                
+                
                 int *W_d = (int*) fixed_cudaMalloc(sizeof(int)*MAX); // device
                 int *P_d = (int*) fixed_cudaMalloc(sizeof(int)*MAX); // device
                 int *S_d = (int*) fixed_cudaMalloc(sizeof(int)*MAX); // device
@@ -363,25 +366,26 @@ int main(int argc, char**argv) {
                 int *L_d = (int*) fixed_cudaMalloc(sizeof(int)*MAX); // device
                 int *Label_d = (int*) fixed_cudaMalloc(sizeof(int)*MAX); // device
                 int *concatIndexList_d = (int*) fixed_cudaMalloc(sizeof(int)*MAX); // device
+                // size_t bbb1 = sizeof(W_d);
+                // printf("Size of W_d after: %d\n", bbb1);
                 cudaDeviceSynchronize();
 
-                copy_to_device(W_d, W_h, sizeof(int)*q_size);
-                copy_to_device(P_d, P_h, sizeof(int)*q_size);
-                copy_to_device(S_d, S_h, sizeof(int)*q_size);
-                copy_to_device(U_d, U_h, sizeof(int)*q_size);
-                copy_to_device(L_d, L_h, sizeof(int)*q_size);
-                // copy_to_device(Label_d, Label_h, sizeof(int)*q_size);
-                // copy_to_device(concatIndexList_d, concatIndexList_h, sizeof(int)*q_size);
+                copy_to_device(W_d, W_h, q_size);
+                copy_to_device(P_d, P_h, q_size);
+                copy_to_device(S_d, S_h, q_size);
+                copy_to_device(U_d, U_h, q_size);
+                copy_to_device(L_d, L_h, q_size);
+                // copy_to_device(Label_d, Label_h, q_size);
+                // copy_to_device(concatIndexList_d, concatIndexList_h, q_size);
                 
                 cudaDeviceSynchronize();
 
-                int *L_h = (int*) fixed_cudaMalloc(sizeof(int)*MAX); // device
-                int *Label_h = (int*) fixed_cudaMalloc(sizeof(int)*MAX); // device
-                int *concatIndexList_h = (int*) fixed_cudaMalloc(sizeof(int)*MAX); // device
+                int *L_h = (int*) malloc( MAX*sizeof(int) ); // device
+                int *Label_h = (int*) malloc( MAX*sizeof(int) ); // device
+                int *concatIndexList_h = (int*) malloc( MAX*sizeof(int) ); // device
                 cudaDeviceSynchronize();
                 // free(node_list);
             }
-
 
             if (q_size == 0)
             {
