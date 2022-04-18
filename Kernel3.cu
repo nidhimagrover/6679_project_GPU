@@ -11,17 +11,19 @@ __global__ void Kernel3(int L_bar, int *U, int *Label) {
     int e = blockDim.x*blockIdx.x + threadIdx.x; // +q or +2q ?
 
     // Use global index to determine which elements to read, add, and write ---
-
-    //INSERT KERNEL CODE HERE
-    int Ue = U[e];
-    
-    if (Ue<=L_bar)
+    if (e < q)
     {
-        atomicExch(& Label[e], 0);
-    }
-    else
-    {
-        atomicExch(& Label[e],1);
+        //INSERT KERNEL CODE HERE
+        int Ue = U[e];
+        
+        if (Ue<=L_bar)
+        {
+            atomicExch(& Label[e], 0);
+        }
+        else
+        {
+            atomicExch(& Label[e],1);
+        }
     }
     __syncthreads();
 
