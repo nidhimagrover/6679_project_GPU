@@ -1,3 +1,6 @@
+
+#include <assert.h>
+
 __global__ void Kernel1(int *w_hat, int *p_hat, int *s, int *U, int* kk, int* qq, int *P_star, int *W_star) 
 {
 
@@ -12,7 +15,8 @@ __global__ void Kernel1(int *w_hat, int *p_hat, int *s, int *U, int* kk, int* qq
 
     //INSERT KERNEL CODE HERE
     int se = s[e], we = w_hat[e], pe = p_hat[e], Ue = U[e];
-    if (k<se){
+    if (k<se)
+    {
         we = we - W_star[k];
         pe = pe - P_star[k];
     }
